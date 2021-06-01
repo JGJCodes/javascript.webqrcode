@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generador de QR codes</title>
+  <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+  <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- =======================================================
+    Theme Name: Medilab
+    Theme URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+</head>
+
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+  <!--banner
+  <section id="banner" class="banner">
+    <div class="bg-color">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="col-md-12">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+              <a class="navbar-brand" href="#">Inicio</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class=""><a href="#about">Generador QR</a></li>
+                <li class=""><a href="#contact">Lector QR</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+  <!--/ banner-->
+  <!--about-->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-4 col-xs-12">
+          <div class="section-title">
+            <h2 class="head-title lg-line">Generador de Codigo QR</h2>
+            <hr class="botm-line">
+			<form action="" method="" role="form" class="contactForm">
+            <div class="form-group">
+				<input type="text" name="generadortexto" class="form-control br-radius-zero" id="generadorTexto" required placeholder="www.ejemplo.com"  />
+				<br>
+				<button type="button" onclick="generarQR()" class="btn btn-form">Generar codigo</button>
+			</div>
+			</form>
+          </div>
+        </div>
+        <div class="col-md-9 col-sm-8 col-xs-12 text-center">
+          <div id="codigoqr" class="cnt text-center">  </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/ about-->
+  <!--contact
+  <section id="contact" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="ser-title">Lector de codigo QR </h2>
+          <hr class="botm-line">
+        </div>
+        <div class="col-md-4 col-sm-4">
+          
+		  <button onclick="leerQR()" class="btn btn-form">Escanear codigo</button>
+		  <div class="space"></div>
+		  <h3>Texto:</h3>
+		  <div class="space"></div>
+          <p id="lectorTexto"> </p>
+          <div class="space"></div>
+        </div>
+        <div  class="col-md-8 col-sm-8 marb20">  
+          <div id="webcam" class="cnt">  </div>
+		  
+        </div>
+		
+      </div>
+    </div>
+  </section>
+  <!--/ contact-->
+  <!--footer-->
+  <footer id="footer">
+    <div class="top-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 marb20">
+            <div class="ftr-tle">
+              <h4 class="white no-padding">Author: Jorge Guzmán Juárez</h4>
+            </div>
+            <div class="info-sec">
+              <p>Un ingeniero continuamente aprendiendo y adquiriendo nuevas habilidades en función a las actuales y futuras demandas y tendencias tecnológicas en el 
+			campo del desarrollo web en general.</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 marb20">
+            <div class="ftr-tle">
+              <h4 class="white no-padding">Links</h4>
+            </div>
+            <div class="info-sec">
+              <ul class="quick-info">
+			    <li><a href="mailto:jorge.guzman.juarez@outlook.com"><i class="fa fa-circle"></i>jorge.guzman.juarez@outlook.com</a></li>
+			    <li><a href="mailto:jorge.jgj.94@gmail.com"><i class="fa fa-circle"></i>jorge.jgj.94@gmail.com</a></li>
+                <li><a href="https://jgjcodes.github.io/Html-PortafolioLaboral/index.html"><i class="fa fa-circle"></i>ES|Programador web</a></li>
+                <li><a href="https://jgjcodes.github.io/Html-PortafolioLaboral/index2.html"><i class="fa fa-circle"></i>EN|Programador web</a></li>
+                
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 marb20">
+            <div class="ftr-tle">
+              <h4 class="white no-padding">Redes sociales</h4>
+            </div>
+            <div class="info-sec">
+              <ul class="social-icon">
+                <a href="https://github.com/JGJCodes" > <li class="bglight-blue">
+				<i class="fa fa-github"></i></li></a>
+               
+                <a href="https://www.linkedin.com/in/jorge-guzm%C3%A1n-ju%C3%A1rez/"><li class="bgdark-blue">
+				<i class="fa fa-linkedin"></i></li></a>
+              
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-line">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            © Copyright Medilab Theme. All Rights Reserved
+            <div class="credits">
+              <!--
+                All the links in the footer should remain intact.
+                You can delete the links only if you purchased the pro version.
+                Licensing information: https://bootstrapmade.com/license/
+                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Medilab
+              -->
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--/ footer-->
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
+   <!--  SCRIPTS -->
+  
+    <script src="js/qrcode.js"></script>
+	<script src="js/qrcode.min.js"></script>
+	<script src="js/script.js"></script>
+
+
+</body>
+
+</html>
